@@ -32,4 +32,22 @@ Route::get('/product/{a}/{b}/{c}', function($a, $b, $c) {
 Route::get('/category/{a?}', function($a = "mobile") {
     return "<h1>This is category page : $a </h1>" ;
 });
-
+Route::get('/hello', function () {	
+    return view('hello');
+    });
+Route::get('/greeting', function () {
+	$data = [
+'name'      => 'James' ,
+'last_name' => 'Mars'
+];
+return view('greeting', $data);
+});
+Route::get('/combine/{id}', function ($id) {
+	$data = [
+'id' => $id
+];
+return view('combine', $data);
+});
+Route::get('/quiz3', function () {	
+    return view('quiz3');
+    });
